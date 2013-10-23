@@ -70,46 +70,23 @@ $n = $_GET[n];
 			mysql_select_db($database_CaseMeg, $CaseMeg);
 			
 			if(isset($n)){
-			$query_RecordsetContact = "update declarant set IDD='$_POST[IDD]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
-			$query_RecordsetContact = "update declarant set Name='$_POST[Name]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
-			$query_RecordsetContact = "update declarant set Ename='$_POST[Ename]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
-			$query_RecordsetContact = "update declarant set NickName='$_POST[NickName]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
-			$query_RecordsetContact = "update declarant set SuperIntendent='$_POST[SuperIntendent]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
-			$query_RecordsetContact = "update declarant set EsuperIntendent='$_POST[EsuperIntendent]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
-			$query_RecordsetContact = "update declarant set WriteTitle='$_POST[WriteTitle]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
-			$query_RecordsetContact = "update declarant set EwriteTitle='$_POST[EwriteTitle]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
-			$query_RecordsetContact = "update declarant set RelationCustomer='$_POST[RelationCustomer]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
-			$query_RecordsetContact = "update declarant set Country='$_POST[Country]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
-			$query_RecordsetContact = "update declarant set Address='$_POST[Address]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
-			$query_RecordsetContact = "update declarant set EAddress='$_POST[EAddress]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
-			$query_RecordsetContact = "update declarant set Telephone='$_POST[Telephone]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
-			$query_RecordsetContact = "update declarant set PostalCode='$_POST[PostalCode]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
-			$query_RecordsetContact = "update declarant set UnityNumber='$_POST[UnityNumber]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
-			$query_RecordsetContact = "update declarant set TrackAddress='$_POST[TrackAddress]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
-			$query_RecordsetContact = "update declarant set ETrackAddress='$_POST[ETrackAddress]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
-			$query_RecordsetContact = "update declarant set CreditState='$_POST[CreditState]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
-			$query_RecordsetContact = "update declarant set Remember='$_POST[Remember]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
-			$query_RecordsetContact = "update declarant set Refer='$_POST[Refer]' where IDD='".$n."'";
-				mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
+				
+				echo "updata";
+					$database = "declarant";
+					Update($database,'IDD',$_POST['IDD'],$n);
+					Update($database,'Name',$_POST['Name'],$n);
+					Update($database,'EName',$_POST['EName'],$n);
+					Update($database,'NickName',$_POST['NickName'],$n);
+					Update($database,'Country',$_POST['Country'],$n);
+					Update($database,'Birthday',$_POST['Birthday'],$n);
+					Update($database,'Telephone',$_POST['Telephone'],$n);
+					Update($database,'E_Mail',$_POST['E_Mail'],$n);
+					Update($database,'Address',$_POST['Address'],$n);
+					Update($database,'EAddress',$_POST['EAddress'],$n);
+					Update($database,'RepresenterName',$_POST['RepresenterName'],$n);
+					Update($database,'RepresenterEName',$_POST['RepresenterEName'],$n);
+					Update($database,'RID',$_POST['RID'],$n);
+					Update($database,'CustomerName',$_POST['CustomerName'],$n);
 			
 			}else{
 				
@@ -117,45 +94,33 @@ $n = $_GET[n];
 			"insert into declarant (
 			IDD,
 			Name,
-			Ename,
+			EName,
 			NickName,
-			SuperIntendent,
-			EsuperIntendent,
-			WriteTitle,
-			EwriteTitle,
-			RelationCustomer,
 			Country,
+			Birthday,
+			Telephone,
+			E_Mail,
 			Address,
 			EAddress,
-			Telephone,
-			PostalCode,
-			UnityNumber,
-			TrackAddress,
-			ETrackAddress,
-			CreditState,
-			Remember,
-			Refer
+			RepresenterName,
+			RepresenterEName,
+			RID,
+			CustomerName
 			) values (
 				'$_POST[IDD]',
 				'$_POST[Name]',
-				'$_POST[Ename]',
+				'$_POST[EName]',
 				'$_POST[NickName]',
-				'$_POST[SuperIntendent]',
-				'$_POST[EsuperIntendent]',
-				'$_POST[WriteTitle]',
-				'$_POST[EwriteTitle]',
-				'$_POST[RelationCustomer]',
 				'$_POST[Country]',
+				'$_POST[Birthday]',
+				'$_POST[Telephone]',
+				'$_POST[E_Mail]',
 				'$_POST[Address]',
 				'$_POST[EAddress]',
-				'$_POST[Telephone]',
-				'$_POST[PostalCode]',
-				'$_POST[UnityNumber]',
-				'$_POST[TrackAddress]',
-				'$_POST[ETrackAddress]',
-				'$_POST[CreditState]',
-				'$_POST[Remember]',
-				'$_POST[Refer]');" ;
+				'$_POST[RepresenterName]',
+				'$_POST[RepresenterEName]',
+				'$_POST[RID]',
+				'$_POST[CustomerName]');";
 				$RecordsetSinup = mysql_query($query_RecordsetContact, $CaseMeg) or die(mysql_error());
 			}
 			

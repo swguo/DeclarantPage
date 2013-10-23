@@ -122,18 +122,15 @@ body div form table tr td {
         <td><input type="text" name="Name" id="Name" value="<?php echo $row_RecordsetAll['Name']; ?>" onKeyUp="check(1)" /></td>
       </tr>
       <tr>
-         <td>*姓名(英): </td>
+        <td>*姓名(英): </td>
         <td colspan="2"><input type="text" name="Ename" id="Ename" value="<?php echo $row_RecordsetAll['Ename']; ?>" onKeyUp="check(1)">
         </td>
       </tr>
       <tr>
+      <tr>
          <td>*暱稱 : </td>
         <td colspan="2"><input type="text" name="NickName" id="NickName"  value="<?php echo $row_RecordsetAll['NickName']; ?>" onKeyUp="check(1)" >
         </td>
-      </tr>
-       <tr>
-         <td>*代表人: </td>
-        <td colspan="2"><input type="text" name="DID" id="DID" value="<?php echo $row_RecordsetAll['DID']; ?>" onKeyUp="check(1)"></td>
       </tr>
       <tr>
       <script>
@@ -166,13 +163,18 @@ body div form table tr td {
           </select>
           TW(國籍輸入或下拉式資料選擇)</td>
       </tr>
+       <tr>
+         <td>*出生日期: </td>
+        <td colspan="2"><input type="text" name="Birthday" id="Birthday" value="<?php echo $row_RecordsetAll['Birthday']; ?>" onKeyUp="check(1)">
+        </td>
+      </tr>
       <tr>
         <td>*電話</td>
         <td colspan="2"><input type="text" name="Telephone" id="Telephone" value="<?php echo $row_RecordsetAll['Telephone']; ?>" onKeyUp="check(1)" /></td>
       </tr>
       <tr>
         <td>*E_Mail</td>
-        <td colspan="2"><input type="text" name="Telephone" id="Telephone" value="<?php echo $row_RecordsetAll['Telephone']; ?>" onKeyUp="check(1)" /></td>
+        <td colspan="2"><input type="text" name="E_Mail" id="E_Mail" value="<?php echo $row_RecordsetAll['E_Mail']; ?>" onKeyUp="check(1)" /></td>
       </tr>
       <tr>
         <td>*地址</td>
@@ -209,7 +211,7 @@ body div form table tr td {
 				echo "<option ".(($row_CustomerCode['CustomerName'] == $row_RecordsetAll['IDD'])?'selected="selected"':"")."". $row_CustomerCode['Name']." value=".$row_CustomerCode['IDD'].">".$row_CustomerCode['Name']."</option>\n";
 			}
 			?>
-          </select>
+         </select>
           </td>
       </tr>
        <br />
